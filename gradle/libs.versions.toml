@@ -1,0 +1,54 @@
+[versions]
+kotlin = "2.2.21"
+java = "21"
+springframework-boot = "4.0.4"
+spring-dependency-management = "1.1.7"
+webmvc-ui = "3.0.2"
+
+[libraries]
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+spring-boot-starter-liquibase = { module = "org.springframework.boot:spring-boot-starter-liquibase" }
+spring-boot-starter-webmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+springdoc-openapi-starter-webmvc-ui = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "webmvc-ui" }
+jackson-module-kotlin = { module = "tools.jackson.module:jackson-module-kotlin" }
+spring-boot-starter-actuator-test = { module = "org.springframework.boot:spring-boot-starter-actuator-test" }
+spring-boot-starter-jdbc-test = { module = "org.springframework.boot:spring-boot-starter-jdbc-test" }
+spring-boot-starter-liquibase-test = { module = "org.springframework.boot:spring-boot-starter-liquibase-test" }
+spring-boot-starter-webmvc-test = { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
+testcontainers-junit-jupiter = { module = "org.testcontainers:testcontainers-junit-jupiter" }
+testcontainers-postgresql = { module = "org.testcontainers:testcontainers-postgresql" }
+postgresql = { module = "org.postgresql:postgresql" }
+spring-boot-configuration-processor =  { module = "org.springframework.boot:spring-boot-configuration-processor" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+
+[bundles]
+springboot = [
+    "spring-boot-starter-actuator",
+    "spring-boot-starter-jdbc",
+    "spring-boot-starter-liquibase",
+    "spring-boot-starter-webmvc",
+    "springdoc-openapi-starter-webmvc-ui"
+]
+kotlin = [
+    "kotlin-reflect",
+    "jackson-module-kotlin"
+]
+
+testing = [
+    "spring-boot-starter-actuator-test",
+    "spring-boot-starter-liquibase-test",
+    "spring-boot-starter-jdbc-test",
+    "spring-boot-starter-webmvc-test",
+    "spring-boot-testcontainers",
+    "kotlin-test-junit5",
+    "testcontainers-junit-jupiter",
+    "testcontainers-postgresql"
+]
+
+[plugins]
+org-springframework-boot = { id = "org.springframework.boot", version.ref = "springframework-boot" }
+io-spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
